@@ -1,6 +1,6 @@
-
 module.exports = {
   mode: 'universal',
+  telemetry: false,
 
   head: {
     title: process.env.npm_package_name || '',
@@ -17,7 +17,8 @@ module.exports = {
   loading: { color: '#fff' },
 
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/theme/style.scss'
   ],
 
   plugins: [
