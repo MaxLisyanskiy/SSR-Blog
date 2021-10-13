@@ -33,7 +33,8 @@
 export default {
   methods: {
     openPost() {
-
+      const id = '123'
+      this.$router.push(`/post/${id}`)
     }
   }
 }
@@ -42,7 +43,7 @@ export default {
 <style lang="scss" scoped>
   .post {
     margin-bottom: 25px;
-    
+
     &-img {
       width: 100%;
       height: auto;
