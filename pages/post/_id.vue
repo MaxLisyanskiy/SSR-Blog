@@ -21,16 +21,33 @@
         <img src="https://nuts-agency.ru/upload/iblock/c98/c9879095ed083e4a3076480c3573b87f.png" alt="">
       </div>
     </header>
-    <main class="post-content"></main>
-    <footer class="post-footer"></footer>
+    <main class="post-content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, velit.
+    </main>
+    <footer class="post-footer">
+      <div class="comments" v-if="true">
+        <AppComent
+          v-for="comment in 4"
+          :key="comment"
+          :comment="comment"
+        />
+      </div>
+      <div class="text-center" v-else>
+        Комментариев нет
+      </div>
+    </footer>
   </article>
 </template>
 
 <script>
+import AppComent from '~/components/client/AppComment'
+
 export default {
+
   validate({params}) {
     return Boolean(params.id)
-  }
+  },
+  components: {AppComent}
 }
 </script>
 
