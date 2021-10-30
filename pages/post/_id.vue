@@ -25,8 +25,11 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, velit.
     </main>
     <footer class="post-footer">
+
+      <AppCommentForm/>
+
       <div class="comments" v-if="true">
-        <AppComent
+        <AppComment
           v-for="comment in 4"
           :key="comment"
           :comment="comment"
@@ -35,19 +38,24 @@
       <div class="text-center" v-else>
         Комментариев нет
       </div>
+
+
     </footer>
   </article>
 </template>
 
 <script>
-import AppComent from '~/components/client/AppComment'
+import AppComment from '~/components/client/AppComment'
+import AppCommentForm from '~/components/client/AppCommentForm'
 
 export default {
 
   validate({params}) {
     return Boolean(params.id)
   },
-  components: {AppComent}
+  components: {
+    AppComment, AppCommentForm
+  }
 }
 </script>
 
@@ -73,7 +81,7 @@ export default {
       align-items: center;
       margin-bottom: .5rem;
     }
-    
+
     &-img {
       img {
         width: 100%;
