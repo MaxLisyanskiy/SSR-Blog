@@ -26,7 +26,10 @@
     </main>
     <footer class="post-footer">
 
-      <AppCommentForm/>
+      <AppCommentForm
+        v-if="canAddComment"
+        @created="createCommentHandler"
+      />
 
       <div class="comments" v-if="true">
         <AppComment
@@ -52,6 +55,16 @@ export default {
 
   validate({params}) {
     return Boolean(params.id)
+  },
+  data () {
+    return {
+      canAddComment: true
+    }
+  },
+  methods: {
+    createCommentHandler() {
+      this.canAddComment = false;
+    }
   },
   components: {
     AppComment, AppCommentForm
