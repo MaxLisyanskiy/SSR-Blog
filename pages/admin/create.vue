@@ -1,0 +1,14 @@
+<template>
+    <div></div>
+</template>
+
+<script>
+    export default {
+      name: "create",
+      layout: 'admin'
+    }
+</script>
+
+<style scoped>
+
+</style>
